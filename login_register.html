@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Page</title>
+    <style>
+        body{
+            background: url('/images/s.jpg') no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/stylesheet.css">
+</head>
+
+<body>
+    <div class='login_box'>
+        <div class="bt">
+            <div id="button"></div>
+            <button type="button" class="btn" onclick="login()">Login</button>
+            <button type="button" class="btn" onclick="register()">Register</button>
+        </div>
+        <form id='login' class="input_group">
+            <label for='email'>Email</label>
+            <div>
+                <input type='email' name='my_email' id='email' placeholder="enter your mail">
+            </div>
+            <label for='password'>Password</label>
+            <div>
+                <input type='password' name='my_password' id='password' placeholder=".........">
+            </div>
+            <div>
+                <a href="user_page.html"><input type='submit' value='Log in'></a>
+            </div>
+        </form>
+        <form action="register.php" method="POST" id='register' class='input_group'>
+            <label for='email'>Email</label>
+            <div>
+                <input type='email' name='email' id='email' placeholder="enter your mail" required>
+            </div>
+            <label for="username">Username</label>
+            <div>
+                <input type='text' name='username' id='username' placeholder="enter a unique username" required>
+            </div>
+            <label for='password'>Password</label>
+            <div>
+                <input type='text' name='password' id='password' placeholder="........." required>
+            </div>
+            <label for="confirm_password">Confirm Password</label>
+            <div>
+                <input type='text' name='confirm_password' id='confirm_password' placeholder="........." required>
+            </div>
+            <label for='number'>Number</label>
+            <div>
+                <input type='number' name='phone' id='number' placeholder="Enter your number" required>
+            </div>
+            <div>
+                <input type='submit' value='Register in'>
+            </div>
+        </form>
+    </div>
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('button');
+
+
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+    </script>
+</body>
+
+</html>
