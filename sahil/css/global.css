@@ -1,0 +1,9 @@
+:root{
+    --primary-color: #8fcdc8;
+    --secondary-color: #689992;
+    --text-color: #fff;
+    --link-color-1: #ccf5f2;
+    --link-color-2: #ffffff;
+    --poppins: 'Poppins', sans-serif;
+    --box-shadow: 0px 5px 3px rgba(168, 86, 35, 0.521);
+}

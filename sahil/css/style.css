@@ -1,0 +1,113 @@
+html, body{
+    margin: 0;
+    height: 100vh;
+    color: var(--text-color);
+    font-family: var(--poppins);
+    background: var(--primary-color);
+}
+
+/* ===== Nav Bar ====== */
+
+.navbar-area .main-menu{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+}
+.navbar-area .main-menu .navbar{
+    padding: 2rem 10rem;
+}
+
+.navbar-area .main-menu .navbar .navbar-nav .nav-link{
+    color: var(--text-color);
+    margin-left: 4.5rem;
+    font-weight: 300;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    border-radius: 30px;
+    transition: 0;
+}
+
+.navbar-area .main-menu .navbar .navbar-nav .nav-link:hover{
+    background-color: #7cccb4;
+}
+
+.navbar-area .main-menu .navbar .navbar-brand{
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.container-fluid{
+    padding: 0;
+}
+/* =============== banner ================= */
+
+body{
+    background-image: url('../img/banner.svg'); 
+    /* https://www.freepik.com/vectors/food */
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    background-position: top -80px right -40px;
+}
+
+.site-main .site-title{
+    padding-left: 10rem;
+    padding-top: 13rem;
+}
+
+.site-main .site-title .main-title{
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    width: 30rem;
+}
+
+.site-main .site-title .sub-title{
+    font-weight: 300;
+    font-size: 1rem;
+    width: 30rem;
+    padding-top: 2rem;
+}
+
+.site-main .site-title .title-button{
+    font-weight: 600;
+    font-size: 1rem;
+    padding-top: 3rem;
+    margin-right: 62.3rem;
+}
+
+
+.site-main .site-title .title-button a{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.7rem 1.3rem;
+    background: #fd9e62;
+    border-radius: 30px;
+    border-width: 2px;
+    border-color: #fd9e62;
+    border-style: solid;
+    transition: background 0.2s ease;
+}
+
+.site-main .site-title .title-button a:hover{
+    color: var(--text-color);
+    background: #fd9d62b0;
+}
+
+
+
+/* ===== footer ====== */
+
+.footer-area .social{
+    padding:  6rem 10rem 0 10rem;
+}
+
+.footer-area .social a{
+    color: var(--link-color-1);
+    font-size: 1.3rem;
+    margin-right: 3rem;
+}
+
+.footer-area .social a:hover{
+    color: var(--link-color-2);
+}
