@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0">
+    <title>Login</title>
+
+
+    <!-- bootstrap css file -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="./css/all.min.css">
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    
+    <!-- global css file -->
+    <link rel="stylesheet" href="./css/global.css">
+    
+    <!-- responsive css file -->
+    <link rel="stylesheet" href="./css/resp.css">
+
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <!-- ===== Navbar ====== -->
+
+  <header class="navbar-area">
+    <div class="main-menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Canteen</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="me-auto"></div>
+            <div class="navbar-nav">
+              <!-- <a class="nav-link active" href="">About</a>
+              <a class="nav-link" href="">Place Order</a>
+              <a class="nav-link" style="padding-right: 0;" href="">About</a> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========= Start Register Area ========== -->
+
+  <section  class="register-area">
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-9">
+            <div class="card-body">
+              
+                <div class="my-box">
+                    <!-- Register -->
+
+                    <form action="#!" class="form-group" id="reg-form">
+                        <div class="header">Register</div>
+                        <div class="form-group">
+                        <label for="username" class="sr-only">Username</label>
+                        <input type="text" name="username" id="reg-username" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" name="email" id="reg-email" class="form-control" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" name="password" id="reg-password" class="form-control" placeholder="Password">
+                        </div>
+                        
+                        <br>
+                        <a href="" class="register-button">Register</a>
+                        <div class="register-card-footer-text">Already have an account? <a onclick="displayLoginForm()" class="text-login">Log in</a>.</div>
+                    </form>
+
+                    <!-- Login -->
+
+                    <form action="#!" class="form-group" id="login-form">
+                        <div class="header">Log In</div>
+                        <div class="form-group">
+                        <label for="username" class="sr-only">Username</label>
+                        <input type="text" name="username" id="login-username" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" name="password" id="login-password" class="form-control" placeholder="Password">
+                        </div>
+                        
+                        <br>
+                        <a href="" class="register-button">Login</a>
+                        <div class="register-card-footer-text">Don't have an account? <a onclick="displayRegForm()" class="text-login">Register</a>.</div>
+
+                    </form>
+                </div>
+              
+              
+            </div>
+          </div>
+          <div class="col-md-3">
+            <img src="img/leaf.svg" alt="login" class="register-card-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- ========= End Register Area ========== -->
+
+    <!-- bootstrap js file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!--  custom js file  -->
+    <script src="./js/main.js"></script>
+    
+</body>
+</html>

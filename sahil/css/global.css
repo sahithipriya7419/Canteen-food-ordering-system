@@ -1,9 +1,12 @@
 :root{
-    --primary-color: #8fcdc8;
-    --secondary-color: #689992;
+    --primary-color: #7e59d4;
+    --secondary-color: #5f409b;
     --text-color: #fff;
-    --link-color-1: #ccf5f2;
-    --link-color-2: #ffffff;
+    --text-color-2: #ffffffbb;
+    --button-color-1: #ff64f7;
+    --button-color-2: #ff51f6;
+    --link-color-1: #ad8aff;
+    --link-color-2: #fb7eff;
     --poppins: 'Poppins', sans-serif;
     --box-shadow: 0px 5px 3px rgba(168, 86, 35, 0.521);
 }

@@ -6,30 +6,35 @@ html, body{
     background: var(--primary-color);
 }
 
+body{
+    overflow: hidden;
+}
+
 /* ===== Nav Bar ====== */
 
 .navbar-area .main-menu{
-    position: fixed;
-    top: 0;
-    width: 100vw;
 
+    width: 100%;
+    z-index: 1;
 }
+
 .navbar-area .main-menu .navbar{
-    padding: 2rem 10rem;
+    padding: 2rem 7rem;
 }
 
 .navbar-area .main-menu .navbar .navbar-nav .nav-link{
-    color: var(--text-color);
+    color: #d1bdff;
     margin-left: 4.5rem;
     font-weight: 300;
-    padding-left: 1.3rem;
-    padding-right: 1.3rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
     border-radius: 30px;
     transition: 0;
+    
 }
 
 .navbar-area .main-menu .navbar .navbar-nav .nav-link:hover{
-    background-color: #7cccb4;
+    color: var(--text-color);
 }
 
 .navbar-area .main-menu .navbar .navbar-brand{
@@ -40,10 +45,10 @@ html, body{
 .container-fluid{
     padding: 0;
 }
-/* =============== banner ================= */
+/* ================== banner ================= */
 
 body{
-    background-image: url('../img/banner.svg'); 
+    background-image: url('../img/banner2.svg'); 
     /* https://www.freepik.com/vectors/food */
     background-size: 100vh;
     background-repeat: no-repeat;
@@ -52,7 +57,7 @@ body{
 
 .site-main .site-title{
     padding-left: 10rem;
-    padding-top: 13rem;
+    padding-top: 6rem;
 }
 
 .site-main .site-title .main-title{
@@ -67,47 +72,66 @@ body{
     font-size: 1rem;
     width: 30rem;
     padding-top: 2rem;
+    color: var(--text-color-2);
 }
 
 .site-main .site-title .title-button{
     font-weight: 600;
-    font-size: 1rem;
-    padding-top: 3rem;
-    margin-right: 62.3rem;
+    font-size: 0.95rem;
+    padding-top: 2rem;
 }
 
 
 .site-main .site-title .title-button a{
     text-decoration: none;
     color: var(--text-color);
-    padding: 0.7rem 1.3rem;
-    background: #fd9e62;
-    border-radius: 30px;
-    border-width: 2px;
-    border-color: #fd9e62;
+    padding: 0.9rem 2rem;
+    background: var(--button-color-1);
+    border-radius: 100px;
+    border-width: 0px;
     border-style: solid;
     transition: background 0.2s ease;
 }
 
 .site-main .site-title .title-button a:hover{
-    color: var(--text-color);
-    background: #fd9d62b0;
+    background: var(--button-color-2);
 }
 
 
 
-/* ===== footer ====== */
+/* ===== social ====== */
 
-.footer-area .social{
-    padding:  6rem 10rem 0 10rem;
+.social-area .social{
+    padding:  8rem 10rem 0 10rem;
 }
 
-.footer-area .social a{
+.social-area .social a{
     color: var(--link-color-1);
     font-size: 1.3rem;
     margin-right: 3rem;
+    margin-left: -4px;
 }
 
-.footer-area .social a:hover{
+.social-area .social a:hover{
     color: var(--link-color-2);
+}
+
+
+
+/* ====== Footer Area ========= */
+
+.footer-area{
+    margin-top: 40rem;
+    background-color: #5f409b;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.footer-area .text-center{
+    color: var(--text-color-2);
+}
+
+.footer-area .text-center .text-login{
+    text-decoration: none;
+    color: #ff9edf;
 }
