@@ -44,6 +44,18 @@ body{
     font-weight: 600;
 }
 
+.login-button{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.7rem 2.5rem;
+    background: var(--button-color-1);
+    border-radius: 6px;
+    border-width: 0px;
+    border-style: solid;
+    transition: background 0.2s ease;
+    
+}
+
 .register-area .card-body .register-button:hover{
     background: var(--button-color-2);
 }
