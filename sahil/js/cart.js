@@ -1,3 +1,13 @@
+cart = document.getElementById("cart");
+cart.style.display = "none";
+
+
+function openCart(val){
+    if(val) cart.style.display = "initial";
+    else cart.style.display = "none";
+}
+
+
 var totalItems = 10;
 cartArray = [];
 var foodItems = 
