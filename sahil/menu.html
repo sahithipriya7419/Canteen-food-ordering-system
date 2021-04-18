@@ -48,7 +48,7 @@
         </div> -->
       </div>
       <div class="button">
-      <a href="" class="btn-place-order">Place Order</a>
+      <button id="btn-order" class="btn-place-order">Place Order</button>
     </div>
     </div>
   </div>
@@ -227,7 +227,11 @@
   </main>
   <!-- ============== End Main Area =========== -->
 
-
+  <!-- ============== Form for sending cart items =========== -->
+  <form style="display:none" method="POST" action="backend/cart.php" id="form_order">
+    <input type="text" name="cartarray" id="cartarray">
+  </form>
+  
   <!-- ============== Start Footer Area ================ -->
 
   <footer class="footer-area text-center text-white">

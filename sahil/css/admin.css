@@ -1,0 +1,228 @@
+body{
+    background-image: none;
+}
+
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet';
+
+:root {
+	--dk-gray-100: #F3F4F6;
+	--dk-gray-200: #E5E7EB;
+	--dk-gray-300: #D1D5DB;
+	--dk-gray-400: #9CA3AF;
+	--dk-gray-500: #6B7280;
+	--dk-gray-600: #4B5563;
+	--dk-gray-700: #374151;
+	--dk-gray-800: #1F2937;
+	--dk-gray-900: #111827;
+	--dk-dark-bg: #313348;
+	--dk-darker-bg: #2a2b3d;
+	--navbar-bg-color: #6f6486;
+	--sidebar-bg-color: #252636;
+	--sidebar-width: 250px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	background-color: var(--dk-darker-bg);
+	font-size: .925rem;
+    height: 100%;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/** --------------------------------
+ -- Navbar
+-------------------------------- */
+.navbar-area .main-menu{
+    z-index: 1;    
+    transition: 0.6s;
+    width: 100%;
+}
+.navbar-area .main-menu .navbar{
+    padding: 0.8rem 2rem;	
+    background-color: var(--navbar-bg-color) !important;
+	border: none !important;
+}
+
+.navbar-area .main-menu .navbar .navbar-nav .nav-link{
+    padding: 0;
+    margin: 0;
+    margin-left: 1em;
+    font-size: 0.9em;
+}
+
+/* ================================= Content ============================ */
+.content-area{
+	background-color: var(--dk-darker-bg);
+    height: 100%;
+}
+.admin-area .admin-container {
+    margin-left: var(--sidebar-width);
+}
+
+/** --------------------------------
+ -- Sidebar
+-------------------------------- */
+.sidebar {
+	background-color: var(--sidebar-bg-color);
+	width: var(--sidebar-width);
+	transform: translateX(0);
+	z-index: 9999999;
+    
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    font: normal normal 500 1em/40px 'Inter', sans-serif;
+}
+.sidebar .sidebar-header {
+	border-bottom: 2px solid #2a2b3c;
+    padding: 2.4em 2em;
+    line-height: 25px;
+
+    display: flex;
+}
+.sidebar .sidebar-header img{
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+}
+.sidebar .sidebar-header .header-name{
+    padding: 0;
+    font-size: 1.2em;
+    margin-left: 0.7em;
+    font-weight: 400;
+    color: #E5E7EB;
+}
+.sidebar .sidebar-header .header-name .subheader-name{
+    font-weight: 300;
+    font-size: 0.8em;
+    color: #9CA3AF;
+}
+.sidebar .link{
+    margin-top: 2em;
+}
+.sidebar .link i{
+    padding-right: 1em; 
+}
+.sidebar a{
+    display: block;
+	color: var(--dk-gray-400);
+	text-decoration: none;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 0.5em 3em;
+}
+.sidebar a:hover{
+    color: var(--dk-gray-200);
+}
+
+
+
+/* ========= Start Content Area ============ */
+.admin-area .admin-container .content-area{
+    padding: 2em;
+}
+
+
+/* ======== Welcome ========== */
+.welcome {
+	color: var(--dk-gray-300);
+}
+
+.welcome .content {
+	background-color: var(--dk-dark-bg);
+}
+
+.welcome p {
+	color: var(--dk-gray-400);
+}
+
+
+/* ======== orders page ========== */
+.orders {
+    margin: 2em 0;
+	background-color: var(--dk-dark-bg);
+	color: var(--dk-gray-300);
+    font-weight: 500;
+}
+
+.orders .order-headings{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 0.5fr 0.5fr;
+    margin-bottom: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0px;
+
+    border-bottom: 2px solid #6f648644;
+}
+.orders .order-headings .hd-actions{
+    text-align: center;
+}
+
+.orders .order-row {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 0.5fr 0.5fr;
+    background: #6f64861e;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    border-radius: 5px;
+
+    font-weight: 300;
+}
+.orders .order-row .hd-actions{
+    text-align: center;
+}
+.orders .order-row .hd-actions .order-yes{
+    padding-inline: 0.6em;
+    color: #2397718f;
+}
+.orders .order-row .hd-actions .order-yes:hover{
+    color: #18be87;
+}
+.orders .order-row .hd-actions .order-no{
+    padding-inline: 0.6em;
+    color: #ff50508f;
+}
+.orders .order-row .hd-actions .order-no:hover{
+    color: #ff5c5c;
+}
+
+.orders .title{
+    margin-bottom: 0.5em;
+}
+
+.orders p {
+	color: var(--dk-gray-400);
+}
+
+
+/* ============ Footer ============ */
+.footer-area{
+    margin-top: 0;
+    width: 100%;
+    background-color: #5f409b;
+    font-weight: 300;
+    font-size: 12px;
+    position: relative;
+    top: 100px;
+}
+
+.footer-area a{
+
+}
+

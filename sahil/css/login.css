@@ -1,6 +1,7 @@
 body{
     background-image: none;
     overflow: hidden;
+    background: #2a2b3d;
 }
 
 .register-area .container{
@@ -8,7 +9,7 @@ body{
     margin-top: -5rem;
 }
 .register-area .container .login-card{
-    background: var(--secondary-color);
+    background: #313348;
     border-radius: 15px;
 }
 
@@ -32,7 +33,7 @@ body{
 
 .register-area .card-body .register-button{
     text-decoration: none;
-    color: var(--text-color);
+    color: #4d4885;
     padding: 0.7rem 2.5rem;
     background: var(--button-color-1);
     border-radius: 6px;
@@ -49,7 +50,7 @@ body{
     text-decoration: none;
     color: var(--text-color);
     padding: 0.7rem 2.5rem;
-    background: var(--button-color-1);
+    background: #433f72;
     border-radius: 6px;
     border-width: 0px;
     border-style: solid;
@@ -58,9 +59,11 @@ body{
     font-weight: 600;
     font-size: 1.3rem;
 }
-
+.login-button:hover{
+    background: #4d4885;
+}
 .register-area .card-body .register-button:hover{
-    background: var(--button-color-2);
+    background: #4d4885;
 }
 
 .register-area .card-body{
@@ -75,14 +78,14 @@ body{
 }
 
 .register-area .card-body .register-card-footer-text .text-login{
-    color: #ff5fca;
+    color: var(--link-color-1);
     text-decoration: none;
     transition: color 0.2s ease;
     cursor: pointer;
 }
 
 .register-area .card-body .register-card-footer-text .text-login:hover{
-    color: #ff9ae9;
+    color: var(--link-color-2);
 }
 
 .register-area .register-card-img{

@@ -1,15 +1,17 @@
 cart = document.getElementById("cart");
 cart.style.display = "none";
 
+var book_order = document.getElementById('btn-order');
+book_order.addEventListener('click',place_order);
+var totalItems = 10;
+cartArray = [];
 
 function openCart(val){
     if(val) cart.style.display = "initial";
     else cart.style.display = "none";
+    Array.from(cartArray).forEach((element)=>{console.log(element['id'])});
 }
 
-
-var totalItems = 10;
-cartArray = [];
 var foodItems = 
 [
     {
@@ -116,5 +118,10 @@ function addItem(a){
 
     document.getElementById("cart-items").appendChild(parentitem);
     console.log(cartArray);
+}
+
+function place_order(){
+    document.getElementById('cartarray').value = JSON.stringify(cartArray);
+    document.getElementById('form_order').submit();
 }
 

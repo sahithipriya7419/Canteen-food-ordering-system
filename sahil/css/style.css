@@ -3,7 +3,7 @@ html, body{
     height: 100vh;
     color: var(--text-color);
     font-family: var(--poppins);
-    background: var(--primary-color);
+    background: #313348;
 }
 
 body{
@@ -48,7 +48,7 @@ body{
 /* ================== banner ================= */
 
 body{
-    background-image: url('../img/banner2.svg'); 
+    background-image: url('../img/banner3.svg'); 
     /* https://www.freepik.com/vectors/food */
     background-size: 100vh;
     background-repeat: no-repeat;
@@ -86,7 +86,7 @@ body{
     text-decoration: none;
     color: var(--text-color);
     padding: 0.9rem 2rem;
-    background: var(--button-color-1);
+    background: #433f72;
     border-radius: 100px;
     border-width: 0px;
     border-style: solid;
@@ -94,7 +94,7 @@ body{
 }
 
 .site-main .site-title .title-button a:hover{
-    background: var(--button-color-2);
+    background: #4d4885;
 }
 
 
@@ -106,14 +106,14 @@ body{
 }
 
 .social-area .social a{
-    color: var(--link-color-1);
+    color: #524e7e;
     font-size: 1.3rem;
     margin-right: 3rem;
     margin-left: -4px;
 }
 
 .social-area .social a:hover{
-    color: var(--link-color-2);
+    color: #7a72ce;
 }
 
 
@@ -121,7 +121,7 @@ body{
 /* ====== Footer Area ========= */
 
 .footer-area{
-    margin-top: 40rem;
+    margin-top: 100vh;
     background-color: #5f409b;
     font-weight: 300;
     font-size: 12px;

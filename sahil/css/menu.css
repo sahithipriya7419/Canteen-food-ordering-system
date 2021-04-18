@@ -2,9 +2,13 @@
     width: 0;
     background: transparent;
 }
+html{
+    background: #2a2b3d;
 
+}
 body{
     background-image: none;
+    background: #2a2b3d;
 }
 
 /* ======== Navbar ========= */
@@ -15,7 +19,7 @@ body{
     position: fixed;
     top: 0;
     width: 100vw;
-    background: #6043a3;
+    background: #2a2b3d;
 
 }
 .navbar-area .main-menu .navbar{
@@ -29,7 +33,7 @@ body{
     padding: 4em 0em;
     margin-bottom: 5rem;
     padding-top: 10rem;
-    background: #433266;
+    background: #39364d;
     line-height: 4em;
 }
 
@@ -60,6 +64,7 @@ body{
     margin-top: 3em;
     font-weight: 700;
     font-size: 2em;
+    background: #2a2b3d;
 }
 .menu-area .category-title::after{
     content: "";
@@ -72,6 +77,7 @@ body{
 }
 
 .menu-area{
+    background: #2a2b3d;;
     margin-bottom: 7em;
 }
 .menu-area .container{
@@ -165,6 +171,7 @@ body{
 /* ======== Fotter ========= */
 
 .footer-area{
+    background: #2a2b3d;;
     margin-top: 0;
     position: relative;
     bottom: 0;
