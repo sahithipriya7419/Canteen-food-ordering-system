@@ -16,13 +16,17 @@ if($_SERVER['REQUEST_METHOD'] = 'POST')
      if($num>0)
      {
         $row = mysqli_fetch_assoc($result);
-        echo $row['Username'] . 'password: ' . $row['Password'];
+        session_start();
+        $_SESSION['Username'] = $row['Username'];
+        // echo $_SESSION['Username'];
+        header("Location: http://localhost/sahil/menu.html");
 
      }
      else{
-         echo "Invalid user";
+         echo '<script>alert("Sorry!!Invalid User");
+         window.location.href="http://localhost/sahil/login.html";
+         </script>';
      }
-
 }
 
 ?>
