@@ -154,6 +154,7 @@ body {
 
 
 /* ======== orders page ========== */
+
 .orders {
     margin: 2em 0;
 	background-color: var(--dk-dark-bg);
@@ -161,7 +162,50 @@ body {
     font-weight: 500;
 }
 
-.orders .order-headings{
+/* order table */
+#orders-table{
+    border-collapse: separate;
+    border-spacing: 0 0.7em;
+    cursor: default;
+}
+#orders-table thead{
+    border-bottom: 2px solid #6f648644;
+}
+#orders-table thead tr th{
+    border-collapse: collapse;
+    border-bottom: 2px solid #6f648644;
+    padding: 1em;
+}
+#orders-table tbody tr{
+    background: #6f64861e;
+    font-weight: 300;
+}
+#orders-table tbody tr:hover{
+    background: #6f64862d;
+}
+#orders-table tbody tr td{
+    padding: 1em;    
+}
+
+#orders-table tbody tr td .order-yes{
+    font-size: 1.1em;
+    color: #2397718f;
+    padding: 0.2em;
+}
+#orders-table tbody tr td .order-yes:hover{
+    color: #18be87;
+}
+#orders-table tbody tr td .order-no{
+    font-size: 1.1em;
+    padding: 0.2em;
+    padding-left: 1em;
+    color: #ff50508f;
+    margin-left: -4px;
+}
+#orders-table tbody tr td .order-no:hover{
+    color: #ff5c5c;
+}
+/* .orders .order-headings{
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 0.5fr 0.5fr;
     margin-bottom: 1em;
@@ -203,7 +247,7 @@ body {
 }
 .orders .order-row .hd-actions .order-no:hover{
     color: #ff5c5c;
-}
+} */
 
 .orders .title{
     margin-bottom: 0.5em;
