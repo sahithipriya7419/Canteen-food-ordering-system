@@ -10,7 +10,7 @@ body{
 /* ======== Navbar ========= */
 .navbar-area .main-menu{
     width: 100%;
-    z-index: 1;    
+    z-index: 10;    
     transition: 0.6s;
     position: fixed;
     top: 0;
@@ -19,7 +19,21 @@ body{
 
 }
 .navbar-area .main-menu .navbar{
-    padding: 1rem 7rem;
+    padding: 1rem 5rem;
+}
+
+.navbar-area .main-menu .navbar .navbar-nav .disabled{
+    color: black;
+}
+.navbar-area .main-menu .navbar .navbar-nav .dropdown-item i{
+    margin-right: 0.5em;
+}
+.navbar-area .main-menu .navbar .navbar-nav .nav-link{
+    margin-right: 0em;
+    padding: 0.5em;
+}
+.navbar-area .main-menu .navbar .navbar-nav .nav-link i{
+    margin-right: 0.5em;
 }
 
 /* =========== Start Banner ============ */
@@ -82,6 +96,8 @@ body{
     padding: 0 1rem;
 }
 
+/* ====================== Start Items ====================== */
+
 .menu-area .container .item{
     background:#ececec;
     color: rgb(51, 51, 51);
@@ -93,10 +109,27 @@ body{
     height: 160px;
     border-radius: 0;
     overflow: auto;
+    position: relative;
+    text-align: center;
 }
 .menu-area .container .item .card-img{
     width: 100%;
     border-radius: 0;
+}
+.menu-area .container .item .image-container .bubble{
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    padding: 2.5em 1.8em 1.2em 3em;
+    font-weight: 500;
+    font-size: 1.1em;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #4a0202;
+    z-index: 1;
+    background: #ff4242;
+    color: #ffffff;
+    display: none;
+    width: 6rem;
 }
 
 
@@ -146,7 +179,8 @@ body{
       90% 100%,
       0 100%
       );
-}
+      user-select: none;
+    }
 
 .menu-area .container .item .addtocart .btn-addtocart{
     font-size: 1.1em;
@@ -157,9 +191,14 @@ body{
     color: #ec66cb;
     border-radius: 7px;
     cursor: pointer;
+    transition: 0.2s ease;
+    user-select: none;
 }
 
 .menu-area .container .item .addtocart .btn-addtocart:hover{
+    color: #ff3ecf;
+}
+.menu-area .container .item .addtocart .btn-addtocart::on{
     color: #ff3ecf;
 }
 
@@ -214,10 +253,11 @@ body{
 .cart .cart-body{
     
     background: #f0f0f0;
-    margin: 9em 30vw;
+    margin: 3em 30vw;
     border-radius: 7px;
     color: #1d1d1d;
     padding: 2em 2em 2.3em;
+    z-index: 30;
 }
 
 .cart .cart-body .title{
@@ -244,6 +284,8 @@ body{
 
 .cart .cart-body .cart-items{
     margin-bottom: 2.4em;
+    height: 25em;
+    overflow: auto;
 }
 
 .cart .cart-body .cart-items .item{
@@ -258,9 +300,30 @@ body{
 .cart .cart-body .cart-items .item div{
     text-align: center;
 }
+.cart .cart-body .cart-items .item .item-delete{
+    text-decoration: none;
+    color: #ff5c5c;
+    cursor: pointer;
+}
+.cart .cart-body .cart-items .item .item-delete:hover{
+    color: #ff4242;
+}
 
 .cart .cart-body .button{
     text-align: right;
+}
+.cart .cart-body .button .total-amount-text{
+    font-weight: 500;
+    font-size: 1.3em;
+    display: inline-block;
+}
+.cart .cart-body .button .total-amount-value{
+    font-weight: 700;
+    font-size: 1.3em;
+    margin-right: 1em;
+    margin-left: 0.2em;
+    color: #00B067;
+    display: inline-block;
 }
 
 .cart .cart-body .button .btn-place-order{

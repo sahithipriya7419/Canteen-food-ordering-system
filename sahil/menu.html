@@ -41,6 +41,7 @@
         <a onclick="openCart(0)"><i class="fas fa-times"></i></a>
       </div>
       <div id="cart-items" class="cart-items">
+        Your Cart Is Empty
         <!-- <div class="item">
           <div class="item-name">Momo</div>
           <div class="item-price">90</div>
@@ -49,6 +50,8 @@
         </div> -->
       </div>
       <div class="button">
+        <div class="total-amount-text">Total Amount: </div>
+        <div id="total-amount" class="total-amount-value">Rs. 9999</div>
         <button id="btn-order" class="btn-place-order">Place Order</button>
       </div>
     </div>
@@ -76,8 +79,20 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="me-auto"></div>
             <div class="navbar-nav">
+
               <!-- <a class="nav-link" href="">Contact</a> -->
-              <a class="nav-link" style="padding-right: 0;" href="">Log out</a>
+              <!-- <a class="nav-link" style="padding-right: 0;" href=""><i class="fas fa-user"></i>Profile</a> -->
+
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user"></i>Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div><a class="dropdown-item disabled" href="" style="user-select: none;">soilshubham</a></div>
+                  <div><hr class="dropdown-divider"></div>
+                  <div><a class="dropdown-item" href=""><i class="fas fa-sign-out-alt"></i>Log Out</a></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -99,11 +114,12 @@
     <!-- ========== Menu Items ========= -->
     <div class="menu-area">
       <div class="category-title">Main Dish</div>
-        <div class="container">
+        <div id="mainDish-items" class="container">
+
             <div id="fd-1" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/chicken-wings.jpg">
-
+                <span class="bubble"></span>
               </div>
                 <div class="card-content">
                     <div class="card-title">Chicken</div>
@@ -111,7 +127,7 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 180</div>
-                  <a onclick="addItem(this)" class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
             </div>
 
@@ -119,6 +135,7 @@
             <div id="fd-2" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/momos.jpg">
+                <span class="bubble"></span>
 
               </div>
                 <div class="card-content">
@@ -127,7 +144,7 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 90</div>
-                  <a onclick="addItem(this)" class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
             </div>
 
@@ -135,6 +152,7 @@
             <div id="fd-3" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/ramen.jpg">
+                <span class="bubble"></span>
 
               </div>
                 <div class="card-content">
@@ -143,12 +161,13 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 150</div>
-                  <a onclick="addItem(this)"  class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)"  class="btn-addtocart">Add</a>
               </div>
             </div>
             <div id="fd-4" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/pizza.jpg">
+                <span class="bubble"></span>
 
               </div>
                 <div class="card-content">
@@ -157,12 +176,13 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 280</div>
-                  <a onclick="addItem(this)" class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
             </div>
             <div id="fd-5" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/samosa.jpg">
+                <span class="bubble"></span>
 
               </div>
                 <div class="card-content">
@@ -171,13 +191,14 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 70</div>
-                  <a onclick="addItem(this)" class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
             </div>
             
             <div id="fd-6" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/sushi.jpg">
+                <span class="bubble"></span>
 
               </div>
                 <div class="card-content">
@@ -186,12 +207,13 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 190</div>
-                  <a onclick="addItem(this)" class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
             </div>
             <div id="fd-7" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/burger.jpg">
+                <span class="bubble"></span>
 
               </div>
                 <div class="card-content">
@@ -200,12 +222,13 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 80</div>
-                  <a onclick="addItem(this)"  class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
             </div>
             <div id="fd-8" class="item">
               <div class="image-container">
                 <img class="card-img" src="./img/Food/meatball.jpg">
+                <span class="bubble"></span>
 
               </div>
                 <div class="card-content">
@@ -214,7 +237,7 @@
                 </div>
                 <div class="addtocart">
                   <div class="price">Rs. 220</div>
-                  <a onclick="addItem(this)" class="btn-addtocart">Add</a>
+                  <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
             </div>
         </div>
@@ -222,10 +245,11 @@
 
       <div class="category-title">Dessert</div>
 
-        <div class="container">
+        <div id="dessert-items" class="container">
           <div id="fd-9" class="item">
             <div class="image-container">
               <img class="card-img" src="./img/Food/brownie.jpg">
+              <span class="bubble"></span>
 
             </div>
             <div class="card-content">
@@ -234,13 +258,14 @@
             </div>
             <div class="addtocart">
               <div class="price">Rs. 110</div>
-              <a onclick="addItem(this)"  class="btn-addtocart">Add</a>
+              <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)"  class="btn-addtocart">Add</a>
             </div>
           </div>
 
           <div id="fd-10" class="item">
             <div class="image-container">
               <img class="card-img" src="./img/Food/waffles.jpg">
+              <span class="bubble"></span>
 
             </div>
               <div class="card-content">
@@ -249,7 +274,7 @@
               </div>
               <div class="addtocart">
                 <div class="price">Rs. 89</div>
-                <a onclick="addItem(this)" class="btn-addtocart">Add</a>
+                <a onclick="addItem(this)" onmouseover="btnPopFX(this, 1)" onmouseout="btnPopFX(this, 0)" class="btn-addtocart">Add</a>
               </div>
           </div>
         </div>
