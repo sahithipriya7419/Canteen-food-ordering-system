@@ -1,6 +1,10 @@
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
 body{
     background-image: none;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .register-area .container{
@@ -10,6 +14,8 @@ body{
 .register-area .container .login-card{
     background: var(--secondary-color);
     border-radius: 15px;
+    overflow: hidden;
+    border-style: none;
 }
 
 .register-area .card-body .header{
@@ -86,6 +92,7 @@ body{
 }
 
 .register-area .register-card-img{
-    height: 70%;
+    height: 20em;
     margin-top: 5rem;    
+    opacity: 0.3;
 }

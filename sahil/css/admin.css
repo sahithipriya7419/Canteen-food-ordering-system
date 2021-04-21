@@ -2,6 +2,8 @@ body{
     background-image: none;
 }
 
+
+
 @import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet';
 
 :root {
@@ -119,18 +121,36 @@ body {
 .sidebar .link i{
     padding-right: 1em; 
 }
-.sidebar a{
+.sidebar .link a, .sidebar a{
     display: block;
 	color: var(--dk-gray-400);
 	text-decoration: none;
     font-weight: 400;
     font-size: 1em;
     padding: 0.5em 3em;
+    cursor: pointer;
 }
-.sidebar a:hover{
+.sidebar .link a:hover, .sidebar a:hover{
     color: var(--dk-gray-200);
 }
+.sidebar .link .active{
+    color: #e0e4e9;
+}
+.sidebar .link .active::after{
+    color: #e0e4e9;
+    content: "";
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: inline-block;
+    margin-left: 5%;
+    transform: translateY(-1.3px);
+}
 
+.sidebar a{
+    cursor: default;
+}
 
 
 /* ========= Start Content Area ============ */
@@ -205,49 +225,6 @@ body {
 #orders-table tbody tr td .order-no:hover{
     color: #ff5c5c;
 }
-/* .orders .order-headings{
-    display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 0.5fr 0.5fr;
-    margin-bottom: 1em;
-    padding: 0.5em 1em;
-    border-radius: 0px;
-
-    border-bottom: 2px solid #6f648644;
-}
-.orders .order-headings .hd-actions{
-    text-align: center;
-}
-
-.orders .order-row {
-    display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 0.5fr 0.5fr;
-    background: #6f64861e;
-    margin-bottom: 1em;
-    padding: 1em;
-    border-radius: 5px;
-    transition: background 0.2s ease;
-    font-weight: 300;
-}
-.orders .order-row:hover{
-    background: #6f64863a;
-}
-.orders .order-row .hd-actions{
-    text-align: center;
-}
-.orders .order-row .hd-actions .order-yes{
-    padding-inline: 0.6em;
-    color: #2397718f;
-}
-.orders .order-row .hd-actions .order-yes:hover{
-    color: #18be87;
-}
-.orders .order-row .hd-actions .order-no{
-    padding-inline: 0.6em;
-    color: #ff50508f;
-}
-.orders .order-row .hd-actions .order-no:hover{
-    color: #ff5c5c;
-} */
 
 .orders .title{
     margin-bottom: 0.5em;
@@ -257,6 +234,87 @@ body {
 	color: var(--dk-gray-400);
 }
 
+
+/* ================ Start Add new item ============= */
+
+#pg-add-items .add-new-item-form{
+    background: #2a2b3da2;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+#pg-add-items .add-new-item-form .add-image{
+    
+}
+#pg-add-items .add-new-item-form .add-image .img-placeholder{
+    background: #252636;
+    height: 190px;
+    width: 313.5px;
+    text-align: center;
+    line-height: 180px;
+    font-size: 3em;
+    margin-top: -15px;
+    overflow: auto;
+    position: relative;
+    border: 2px solid #3f4269;
+}
+
+
+#pg-add-items .add-new-item-form .add-image .img-placeholder #output{
+    position: absolute;
+    width: 285px;
+    top: 13px;
+    left: 12px;
+    opacity: 1;
+}
+
+#pg-add-items .add-new-item-form .add-info .form-button{
+    padding: 0.4em 2em;
+    border-style: none;
+    border-radius: 3px;
+    background: #6f6486;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1em;
+    margin-right: 0.7em;
+}
+#pg-add-items .add-new-item-form .add-info .form-button:hover{
+    padding: 0.4em 2em;
+    border-style: none;
+    border-radius: 3px;
+    background: #8071a1;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1em;
+    margin-right: 0.7em;
+}
+
+#pg-add-items .add-new-item-form .add-info {
+    padding-left: 2em;
+    padding-top: 1em;
+}
+#pg-add-items .add-new-item-form .add-info .input-group{
+    margin-bottom: 0.8em;
+}
+#pg-add-items .add-new-item-form .add-info .input-group .add-item-inpt{
+    padding: 0.2em 0em;
+    font-size: 1.1em;
+    color: #ffffffd8;
+    background:transparent;
+    border-style: none;
+    border-bottom: 2px solid #3f4269;
+}
+#pg-add-items .add-new-item-form .add-info .input-group .add-item-inpt::placeholder{
+    color: #63668d85;
+
+}
+
+
+
+
+
+
+/* ================ End Add new item ============= */
 
 /* ============ Footer ============ */
 .footer-area{
@@ -268,8 +326,3 @@ body {
     position: relative;
     top: 100px;
 }
-
-.footer-area a{
-
-}
-

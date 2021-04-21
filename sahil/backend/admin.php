@@ -46,6 +46,13 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="me-auto"></div>
+                <div class="navbar-nav">
+                  <a class="nav-link active" href="">Log Out</a>
+
+                </div>
+              </div>
             </div>
           </nav>
         </div>
@@ -60,16 +67,15 @@
           </a>
         </div>
         <div class="link">
-          <a id="sidebar-orders" onclick="sidebar(0)"><i class="fas fa-home"></i>Orders</a>
+        <a id="sidebar-orders" onclick="sidebar(0)"><i class="fas fa-home"></i>Orders</a>
           <a id="sidebar-all-items" onclick="sidebar(1)"><i class="fas fa-utensils"></i>All Items</a>
           <a id="sidebar-add-new-item" onclick="sidebar(2)"><i class="fas fa-plus"></i>Add New Item</a>
           <a id="sidebar-logout" href=""><i class="fas fa-sign-out-alt"></i>Log Out</a>
-
         </div>
       </aside>
 
       <div class="content-area">
-        <div id="pg-orders" class="pg-orders" >
+        <div class="pg-orders">
 
           <div class="welcome">
             <div class="content rounded-3 p-3">
@@ -92,6 +98,25 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php
+                      include 'dbconnect.php';
+                          $sql = "SELECT * from `cart_items`";
+                          session_start();
+                          $username = $_SESSION['Username'];
+                          $result = mysqli_query($conn,$sql);
+                          $no = 0;
+                          while($row = mysqli_fetch_assoc($result))
+                          {
+                              $no = $no + 1;
+                              echo "<tr>
+                                  <td>" . $username . "</td>
+                                  <td>" . $row['item_quantity'].$row['item_name'] . "</td>
+                                  <td>" . $row['order_time'] . "</td>
+                                  <td>" . $row['item_price'] . "</td>
+                                  </tr>";
+
+                          }
+                      ?>
                   <tr>
                     <td>soil12</td>
                     <td>3 Momo, 1 Ramen</td>
@@ -124,68 +149,10 @@
                   </tr>
                 </tbody>
             </table>
-            <!-- <div class="order-headings">
-              <div class="hd-sno">User</div>
-              <div class="hd-items">Items</div>
-              <div class="hd-items">Date / Time</div>
-              <div class="hd-amount">Total Amount</div>
-              <div class="hd-actions">Actions</div>
-            </div>
-
-            <div class="order-row rounded-3">
-              <div class="hd-sno">soilshubham</div>
-              <div class="hd-items">3 Chicken, 1 Ramen, 1 Brownie</div>
-              <div class="hd-time">17/04/2021, 13:04</div>
-              <div class="hd-amount">Rs. 1450</div>
-              <div class="hd-actions">
-                <a href="" class="order-yes"><i class="fas fa-check"></i></a>
-                <a href="" class="order-no"><i class="fas fa-times"></i></a>
-              </div>
-            </div> -->
           </div>
 
         </div>
-        <div class="pg-add-new"></div>
-        <div class="pg-settings"></div>
-        
 
-        
-        </div>
-
-        
-        <div id="pg-add-items" class="pg-add-items">
-          <div class="orders rounded-3 p-3">
-            <div class="title fs-3">Add Items</div>
-            <div class="add-new-item-form">
-              <div class="add-image">
-
-                  <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-                  <p>
-                    <label for="file" style="cursor: pointer;" 
-                      class="img-placeholder">
-                      +
-                      <img id="output">
-                    </label>
-                  </p>
-
-              </div>
-              <form class="add-info">
-                <div class="input-group">
-                  <label for="" class="sr-only">Item Name</label>
-                  <input type="text" name="" id="add-item-name" class="add-item-inpt" placeholder="Item Name">
-                </div>
-                <div class="input-group">
-                  <label for="" class="sr-only">Item Amount</label>
-                  <input type="number" name="" id="add-item-amount" class="add-item-inpt" placeholder="Item Amount">
-                </div>
-                
-                
-                <br><input type="reset" onclick="resetImage()" class="form-button" value="Reset">
-                <input type="submit" class="form-button" value="Add">
-              </form>
-            </div>
-          </div>
-        </div>
 
         <div id="pg-all-items" class="pg-all-items" >
           <div class="orders rounded-3 p-3">
@@ -276,11 +243,42 @@
             </table>
           </div>
         </div>
-        <div class="pg-settings"></div>
         
+        <div id="pg-add-items" class="pg-add-items">
+          <div class="orders rounded-3 p-3">
+            <div class="title fs-3">Add Items</div>
+            <div class="add-new-item-form">
+              <div class="add-image">
 
-        
+                  <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                  <p>
+                    <label for="file" style="cursor: pointer;" 
+                      class="img-placeholder">
+                      +
+                      <img id="output">
+                    </label>
+                  </p>
+
+              </div>
+              <form class="add-info">
+                <div class="input-group">
+                  <label for="" class="sr-only">Item Name</label>
+                  <input type="text" name="" id="add-item-name" class="add-item-inpt" placeholder="Item Name">
+                </div>
+                <div class="input-group">
+                  <label for="" class="sr-only">Item Amount</label>
+                  <input type="number" name="" id="add-item-amount" class="add-item-inpt" placeholder="Item Amount">
+                </div>
+                
+                
+                <br><input type="reset" onclick="resetImage()" class="form-button" value="Reset">
+                <input type="submit" class="form-button" value="Add">
+              </form>
+            </div>
+          </div>
         </div>
+        
+      </div>
     </div>
   </div>
   

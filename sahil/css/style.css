@@ -6,6 +6,10 @@ html, body{
     background: var(--primary-color);
 }
 
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
 body{
 
 }
