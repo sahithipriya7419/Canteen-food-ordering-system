@@ -49,3 +49,18 @@ var sidebar = function(index) {
     }
 
 }
+
+
+orderModal = document.getElementById("orders-modal");
+orderModal.style.display = "none";
+function openCart(val){
+
+    if(val) {
+        orderModal.style.display = "initial";
+        document.body.style.overflow = "hidden";
+    }
+    else{
+        orderModal.style.display = "none";
+        document.body.style.overflow = "visible";
+    }
+}

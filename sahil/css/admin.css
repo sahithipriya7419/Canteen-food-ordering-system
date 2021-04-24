@@ -28,7 +28,9 @@ body{
 	padding: 0;
 	box-sizing: border-box;
 }
-
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
 body {
 	font-family: 'Inter', sans-serif;
 	background-color: var(--dk-darker-bg);
@@ -82,7 +84,7 @@ body {
 	background-color: var(--sidebar-bg-color);
 	width: var(--sidebar-width);
 	transform: translateX(0);
-	z-index: 9999999;
+	z-index: 1;
     
     height: 100vh;
     position: fixed;
@@ -207,6 +209,22 @@ body {
     padding: 1em;    
 }
 
+#orders-table tbody tr td a{
+    text-decoration:none;
+    padding: 0.4em 0.9em;    
+    font-size: 0.9em;
+    border-style: none;
+    border-radius: 4px;
+    background: #2b7a57;
+    color: #ffffff;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+}
+#orders-table tbody tr td a:hover{
+    background: #338e65;
+}
+
 #orders-table tbody tr td .order-yes{
     font-size: 1.1em;
     color: #2397718f;
@@ -326,3 +344,169 @@ body {
     position: relative;
     top: 100px;
 }
+
+
+/* ================== cart Modal ==================== */
+
+.orders-modal{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #100e13cc;
+    z-index: 40;
+    top: 0;
+    right: 0;
+}
+.orders-modal .modal-body{
+    
+    background: var(--dk-dark-bg);
+    margin: 5em 30vw;
+    border-radius: 7px;
+    color: #ececec;
+    padding: 2.5em 2.5em;
+    z-index: 30;
+    position: relative;
+}
+
+.orders-modal .modal-body .title{
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 1em;
+    margin-right: 0.3em;
+}
+
+.orders-modal .modal-body .cross{
+    display: inline-block;
+    position:absolute;
+    top: 0%;
+    right: 0%;
+    padding: 0.4em 0.8em;
+    font-size: 1.5em;
+}
+.orders-modal .modal-body .cross a{
+    cursor: pointer;
+    color: #6f6486;
+}
+.orders-modal .modal-body .cross a:hover{
+    color: #998abb;
+}
+
+.orders-modal .modal-body .modal-items{
+    margin-bottom: 1.5em;
+    height: 19.5em;
+    overflow:auto;
+    padding: 0 0.5em;
+}
+.orders-modal .modal-body .modal-items::-webkit-scrollbar {
+    display: initial;
+    width: 7px;
+}
+.orders-modal .modal-body .modal-items::-webkit-scrollbar-track {
+    background: #2a2b3c;
+    border-radius: 10px;
+}
+.orders-modal .modal-body .modal-items::-webkit-scrollbar-thumb  {
+    border-radius: 10px;
+    background: #6f64864f;
+}
+.orders-modal .modal-body .modal-items::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: #6f648698;
+}
+
+
+.orders-modal .modal-body .heading{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: none;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    border-radius: 5px;
+    margin-top: 0.5em;
+    padding-right: 2em;
+}
+.orders-modal .modal-body .heading div{
+    text-align: center;
+    font-weight: 500;
+    color: var(--dk-gray-400);
+}
+hr.head-hr{
+    margin-top: -6px;
+    margin-bottom: 25px;
+}
+
+
+
+.orders-modal .modal-body .modal-items .item{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: #6f64861e;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    border-radius: 5px;
+    cursor: default;
+}
+.orders-modal .modal-body .modal-items .item:hover{
+
+    background: #6f64862d;
+
+}
+
+.orders-modal .modal-body .modal-items .item div{
+    text-align: center;
+    font-weight: 100;
+}
+
+
+.orders-modal .modal-body .button .title{
+    text-align: center; 
+    margin-top: 0;
+}   
+.orders-modal .modal-body .button .title div{
+    font-size: 1em;
+    font-weight: 300;
+    text-align: center; 
+    display: inline;
+    color: #a7a7a7;
+}
+.orders-modal .modal-body .button .title .total-amount{
+    font-weight: 700;
+    color: #dfdfdf;
+}
+.orders-modal .modal-body .button .actions{
+    text-align: center;
+    font-size: 1em; 
+    margin-top: 1.5em;
+    font-weight: 300;
+}
+.orders-modal .modal-body .button .actions a{
+    text-decoration: none;
+    padding: 0.5em 1.3em;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 30px;
+    margin: 0 0.5em;
+    transition: background 0.2s ease;
+}
+.orders-modal .modal-body .button .actions a i{
+    padding-right: 0.5em;
+}
+.orders-modal .modal-body .button .actions .accept{
+    color: #ffffff;
+    background: #1f926cbe;
+    border-color: #1f926c;
+}
+.orders-modal .modal-body .button .actions .decline{
+    color: #ffffff;
+    background: #ff5c5cc5;
+    border-color: #ff5c5c;
+}
+.orders-modal .modal-body .button .actions .accept:hover{
+    background: #1f926c;
+}
+.orders-modal .modal-body .button .actions .decline:hover{
+    background: #ff5c5c;
+}
+
