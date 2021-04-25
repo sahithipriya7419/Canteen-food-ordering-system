@@ -64,3 +64,19 @@ function openCart(val){
         document.body.style.overflow = "visible";
     }
 }
+
+var openCart = document.getElementsByClassName('openCart');
+    Array.from(openCart).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+
+        tr = e.target.parentNode.parentNode;
+        cart_id = tr.getElementsByTagName("td")[2].innerText;
+        // open_cart_id.value = cart_id;
+        
+        window.location = `/sahil/admin.php?cart_id=${cart_id}`;
+        orderModal.style.display = "initial";
+        document.body.style.overflow = "hidden";
+
+    })
+})
