@@ -1,14 +1,14 @@
 <?php
+
+include 'dbconnect.php';
  
-if($_SERVER['REQUEST_METHOD'] = 'POST')
-{
-     include 'dbconnect.php';
+if($_SERVER['REQUEST_METHOD'] = 'POST'){
 
      $cart_id = 0;
-
      $username = "";
      session_start();
-     if(isset($_SESSION['Username'])){
+     if(isset($_SESSION['Username']))
+     {
          $username = $_SESSION['Username'];
          $array = json_decode($_POST['cartarray']);
          $sql = "INSERT INTO `main_cart` (`username`, `cart_id`) VALUES ('$username', NULL);";
@@ -69,33 +69,4 @@ if($_SERVER['REQUEST_METHOD'] = 'POST')
         echo var_dump($_SESSION['Username']);
         
      }
-
-
-
-
-    //  $sql = "SELECT * FROM `user` WHERE Username='$user' AND Password = md5('$password')";
-
-    //  $result = mysqli_query($conn, $sql);
-
-    //  if($result)
-    //  {
-    //      echo "Succesful conn";
-    //  }
-    //  else{
-    //      echo "error";
-    //  }
-
-    //  $num = mysqli_num_rows($result);    
-
-    //  if($num>0)
-    //  {
-    //     $row = mysqli_fetch_assoc($result);
-    //     echo '<script>alert("Added item successfully");
-    //     </script>';
-
-    //  }
-    //  else{
-    //      echo '<script>alert("Cannot add the item");
-    //      </script>';
-    //  }
 }

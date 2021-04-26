@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_METHOD'] = 'POST')
     if($result)
     {
         echo "User Created Successfully!! ";
+        header("Location: http://localhost/sahil/login.html");
 
         if($altercontact == "")
         {

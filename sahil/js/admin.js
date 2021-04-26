@@ -50,25 +50,27 @@ var sidebar = function(index) {
 
 }
 
-
 orderModal = document.getElementById("orders-modal");
-orderModal.style.display = "none";
-function openCart(val){
 
-    if(val) {
+function openCart(val)
+{
+
+    if(val) 
+    {
         orderModal.style.display = "initial";
         document.body.style.overflow = "hidden";
     }
-    else{
+    else
+    {
         orderModal.style.display = "none";
         document.body.style.overflow = "visible";
+        window.location = `/sahil/admin.php`;
     }
 }
 
 var openCart = document.getElementsByClassName('openCart');
     Array.from(openCart).forEach((element) => {
       element.addEventListener("click", (e) => {
-        console.log("edit ");
 
         tr = e.target.parentNode.parentNode;
         cart_id = tr.getElementsByTagName("td")[2].innerText;
@@ -80,3 +82,5 @@ var openCart = document.getElementsByClassName('openCart');
 
     })
 })
+
+

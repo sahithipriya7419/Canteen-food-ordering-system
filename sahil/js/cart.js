@@ -301,22 +301,15 @@ function place_order(){
                     confirmButtonText: 'Proceed',
                     allowOutsideClick: false
                   }).then((result) => {
-                    if (result.isConfirmed) {
-
-                        // SAHITHI SAHITHI SAHITHI
-                        //
-                        // Add your code to submit the cart items HERE
-                        //
-
-
-                        location.reload();
+                    if (result.isConfirmed) {  
+                        document.getElementById('cartarray').value = JSON.stringify(cartArray);
+                        document.getElementById('form_order').submit();
+                        window.location.href = "http://localhost/sahil/menu.php";
                     }
                   })
             }
           })
-        
-        // document.getElementById('cartarray').value = JSON.stringify(cartArray);
-        // document.getElementById('form_order').submit();
+
     }
     
 }

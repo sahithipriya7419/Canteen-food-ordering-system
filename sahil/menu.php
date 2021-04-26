@@ -88,9 +88,19 @@
                   <i class="fas fa-user"></i>Profile
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <div><a class="dropdown-item disabled" href="" style="user-select: none;">soilshubham</a></div>
+                  <div><a class="dropdown-item disabled" href="" style="user-select: none;">
+                    <?php
+                          include 'backend/dbconnect.php';
+                          session_start();
+                          echo $_SESSION['Username'];
+                          
+
+                    ?>
+                  
+                  </a></div>
                   <div><hr class="dropdown-divider"></div>
-                  <div><a class="dropdown-item" href=""><i class="fas fa-sign-out-alt"></i>Log Out</a></div>
+                  <div><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i>Log out
+          </a></div>
                 </div>
               </div>
             </div>
