@@ -224,6 +224,15 @@ body{
     bottom: 0;
     right: 0;
 }
+.cart-icon .cart-has-items::after{
+    content: "";
+    height: 0.7em;
+    width: 0.7em;
+    background: #10d378;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+}
 
 .cart-icon .bg{
     cursor: pointer;
@@ -235,6 +244,8 @@ body{
     text-align: center;
     line-height: 75px;
     border: 5px solid #ffffff;
+    transform: scale(1);
+    transition: 0.2s ease;
 }
 .cart-icon .btn-cart-open{
     font-size: 1.9em;

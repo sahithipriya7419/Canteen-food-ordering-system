@@ -1,3 +1,5 @@
+var maxItemInCart = 6;
+
 cart = document.getElementById("cart");
 cart.style.display = "none";
 
@@ -111,6 +113,7 @@ function changeBubble(a){
     bubble.style.display = "initial";
     var bubbleValue = parseInt(bubble.textContent);
     if(Number.isInteger(bubbleValue)){
+        if(bubbleValue<=(maxItemInCart-1))
         bubble.innerHTML = bubbleValue+1;
     }
     else{
@@ -159,14 +162,16 @@ function addItem(a){
     }
     
     if(present){
-        cartArray[i].q +=1;
+        if(cartArray[i].q<=(maxItemInCart-1)) cartArray[i].q +=1;
+
         var itemPresent_quantity = document.getElementById("cart-items").childNodes;
         for(var i=0; i<itemPresent_quantity.length; i++){
             if("cart-"+item.id == itemPresent_quantity[i].id){
                 var presetElement = itemPresent_quantity[i].getElementsByClassName("item-quantity")[0];
                 console.log("hehe", presetElement);
                 presetElement_q = parseInt(presetElement.textContent);
-                presetElement.innerHTML = presetElement_q+1;
+
+                if(presetElement_q<=(maxItemInCart-1)) presetElement.innerHTML = presetElement_q+1;
 
             }
         }
@@ -202,8 +207,25 @@ function addItem(a){
         document.getElementById("cart-items").appendChild(parentitem);
     }
 
+    updateCartIconBubble();
     
-    console.log(cartArray);
+}
+
+function updateCartIconBubble(){
+    var cartIcon = document.getElementsByClassName("btn-cart-open")[0];
+    if(cartArray.length>0){
+        cartIcon.classList.add("cart-has-items");
+    }
+    else{
+        cartIcon.classList.remove("cart-has-items");
+    }
+
+    var bg = document.getElementsByClassName("bg")[0];
+    bg.style.transform = "scale(1.2)";
+    setTimeout(() => {
+        bg.style.transform = "scale(1)";
+    }, 100);
+
 }
 
 function removeItem(a){
@@ -254,10 +276,48 @@ function removeItem(a){
 
     if(cartArray.length>0) document.getElementById("cart-items").childNodes[0].textContent = "";
     else document.getElementById("cart-items").childNodes[0].textContent = "Your Cart Is Empty";
+
+
+    updateCartIconBubble();
+
 }
 
 function place_order(){
-    document.getElementById('cartarray').value = JSON.stringify(cartArray);
-    document.getElementById('form_order').submit();
+
+    if(cartArray.length>0){
+
+        Swal.fire({
+            title: 'Payment Details',
+            input: 'text',
+            inputLabel: 'Enter your UPI ID',
+            showCancelButton: true,
+            allowOutsideClick: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Order Placed!',
+                    text: 'Your order has been placed successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Proceed',
+                    allowOutsideClick: false
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        // SAHITHI SAHITHI SAHITHI
+                        //
+                        // Add your code to submit the cart items HERE
+                        //
+
+
+                        location.reload();
+                    }
+                  })
+            }
+          })
+        
+        // document.getElementById('cartarray').value = JSON.stringify(cartArray);
+        // document.getElementById('form_order').submit();
+    }
+    
 }
 
