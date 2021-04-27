@@ -82,29 +82,12 @@
           <div id="modal-items" class="modal-items">
 
             <!-- cart items  -->
-            <?php
-            include 'backend/dbconnect.php';
-
-            if (isset($_GET['cart_id'])) {
-              $id = $_GET['cart_id'];
-              $query = "SELECT * from `cart_items` where cart_id=$id";
-              $main = mysqli_query($conn, $query);
-              $no = 0;
-              while ($row = mysqli_fetch_assoc($main)) {
-
-                $no = $no + 1;
-                $total = $row['item_quantity'] * $row['item_price'];
-                echo "<div class='item'>";
-                echo "<div>" . $row['item_quantity'] . "</div>";
-                echo "<div>" . $row['item_name'] . "</div>";
-                echo "<div>" . $row['item_price'] . '/-' . "</div>";
-                echo "<div>" . $total . '/-' . "</div>";
-                echo "</div>";
-              }
-            }
-
-
-            ?>
+            <div class='item'>
+                <div>5</div>
+                <div>Momos</div>
+                <div>80/-</div>
+                <div>308/-</div>
+            </div>
 
 
           </div>
@@ -115,8 +98,8 @@
             </div>
 
             <div class="actions">
-              <a onclick="orderAction(1)" href="" class="accept"><i class="fas fa-check"></i>Accept</a>
-              <a onclick="orderAction(0)" href="" class="decline"><i class="fas fa-times"></i>Decline</a>
+              <a href="" class="accept"><i class="fas fa-check"></i>Accept</a>
+              <a href="" class="decline"><i class="fas fa-times"></i>Decline</a>
             </div>
           </div>
         </div>
@@ -173,28 +156,69 @@
                 </thead>
                 <tbody>
 
-                  <?php
-                  include 'backend/dbconnect.php';
-                  $query = "SELECT * from `main_cart`";
-                  $main = mysqli_query($conn, $query);
-                  $no = 0;
-                  while ($row = mysqli_fetch_assoc($main)) {
-                    $cart = $row['cart_id'];
-                    $sql = "SELECT * from `cart_items` where cart_id=$cart";
-                    $result = mysqli_query($conn, $sql);
-                    $date = mysqli_fetch_assoc($result);
-                    $no = $no + 1;
-                    echo "<tr>
-                                  <td>" . $no . "</td>
-                                  <td>" . $row['username'] . "</td>
-                                  <td>" . $row['cart_id'] . "</td>
-                                  <td>" . $date['order_time'] . "</td>
-                                  <td>
-                                    <a class='view-btn openCart'>View</a>
-                                  </td>
-                                  </tr>";
-                  }
-                  ?>
+                    <tr>
+                        <td>1</td>
+                        <td>sahil</td>
+                        <td>23</td>
+                        <td>13:09, 23/02/21</td>
+                        <td>
+                        <a class='view-btn openCart'>View</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>sahil</td>
+                        <td>23</td>
+                        <td>13:09, 23/02/21</td>
+                        <td>
+                        <a class='view-btn openCart'>View</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>sahil</td>
+                        <td>23</td>
+                        <td>13:09, 23/02/21</td>
+                        <td>
+                        <a class='view-btn openCart'>View</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>sahil</td>
+                        <td>23</td>
+                        <td>13:09, 23/02/21</td>
+                        <td>
+                        <a class='view-btn openCart'>View</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>sahil</td>
+                        <td>23</td>
+                        <td>13:09, 23/02/21</td>
+                        <td>
+                        <a class='view-btn openCart'>View</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>sahil</td>
+                        <td>23</td>
+                        <td>13:09, 23/02/21</td>
+                        <td>
+                        <a class='view-btn openCart'>View</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>sahil</td>
+                        <td>23</td>
+                        <td>13:09, 23/02/21</td>
+                        <td>
+                        <a class='view-btn openCart'>View</a>
+                        </td>
+                    </tr>
                 </tbody>
               </table>
             </div>
@@ -329,22 +353,6 @@
                     <td>Yes</td>
                     <td>Veg</td>
                   </tr>
-                  <?php
-                  include 'backend/dbconnect.php';
-                  $query = "SELECT * from `add_item`";
-                  $main = mysqli_query($conn, $query);
-                  $no = 11;
-                  while ($row = mysqli_fetch_assoc($main)) {
-                    $no = $no + 1;
-                    echo "<tr>
-                                    <td>" . $no . "</td>
-                                    <td>" . $row['name'] . "</td>
-                                    <td>" . $row['price'] . '/-' . "</td>
-                                    <td>" . 'yes' . "</td>
-                                    <td>" . 'veg' . "</td>
-                              </tr>";
-                  }
-                  ?>
 
                 </tbody>
               </table>
@@ -381,31 +389,17 @@
     <script src="./js/main.js"></script>
     <script src="./js/admin.js"></script>
 
-    
-
-    
-
-
-
 </body>
 
 </html>
-<?php
 
-if (isset($_GET['cart_id'])) {
-  echo "
-     <script>
-     orderModal = document.getElementById('orders-modal');
-     orderModal.style.display = 'initial';
-     document.body.style.overflow = 'hidden';
-    </script>";
-} else {
-  echo "
-     <script>
-     orderModal = document.getElementById('orders-modal');
-     orderModal.style.display = 'none';
-     document.body.style.overflow = 'visible';
-    </script>";
-}
-
-?>
+<script>
+orderModal = document.getElementById('orders-modal');
+orderModal.style.display = 'initial';
+document.body.style.overflow = 'hidden';
+</script>
+<script>
+orderModal = document.getElementById('orders-modal');
+orderModal.style.display = 'none';
+document.body.style.overflow = 'visible';
+</script>

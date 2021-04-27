@@ -80,7 +80,42 @@ var openCart = document.getElementsByClassName('openCart');
         orderModal.style.display = "initial";
         document.body.style.overflow = "hidden";
 
+        })
     })
-})
+
+function orderAction(input){
+    if(input){
+        Swal.fire({
+            toast: true,
+            icon: 'success',
+            title: 'Order Accepted!',
+            animation: true,
+            position: 'top-right',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+    }
+    else{
+        Swal.fire({
+            toast: true,
+            icon: 'error',
+            title: 'Order Declined!',
+            animation: true,
+            position: 'top-right',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+    }
+}
 
 
