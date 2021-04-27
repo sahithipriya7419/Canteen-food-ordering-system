@@ -80,12 +80,13 @@ var openCart = document.getElementsByClassName('openCart');
         orderModal.style.display = "initial";
         document.body.style.overflow = "hidden";
 
-        })
     })
+})
 
 function orderAction(input){
     if(input){
-        openCart(0);
+        orderModal.style.display = "none";
+        document.body.style.overflow = "visible";
         Swal.fire({
             toast: true,
             icon: 'success',
@@ -102,7 +103,8 @@ function orderAction(input){
           })
     }
     else{
-        openCart(0);
+        orderModal.style.display = "none";
+        document.body.style.overflow = "visible";
         Swal.fire({
             toast: true,
             icon: 'error',

@@ -304,7 +304,6 @@ function place_order(){
                     if (result.isConfirmed) {  
                         document.getElementById('cartarray').value = JSON.stringify(cartArray);
                         document.getElementById('form_order').submit();
-                        window.location.href = "http://localhost/sahil/menu.php";
                     }
                   })
             }

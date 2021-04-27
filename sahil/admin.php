@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0">
   <title>Admins</title>
 
-
   <!-- bootstrap css file -->
   <link rel="stylesheet" href="./css/bootstrap.min.css">
 
@@ -115,8 +114,8 @@
             </div>
 
             <div class="actions">
-              <a onclick="orderAction(1)" href="" class="accept"><i class="fas fa-check"></i>Accept</a>
-              <a onclick="orderAction(0)" href="" class="decline"><i class="fas fa-times"></i>Decline</a>
+              <a onclick="orderAction(1)" class="accept"><i class="fas fa-check"></i>Accept</a>
+              <a onclick="orderAction(0)" class="decline"><i class="fas fa-times"></i>Decline</a>
             </div>
           </div>
         </div>
@@ -381,11 +380,6 @@
     <script src="./js/main.js"></script>
     <script src="./js/admin.js"></script>
 
-    
-
-    
-
-
 
 </body>
 
@@ -407,5 +401,6 @@ if (isset($_GET['cart_id'])) {
      document.body.style.overflow = 'visible';
     </script>";
 }
+
 
 ?>

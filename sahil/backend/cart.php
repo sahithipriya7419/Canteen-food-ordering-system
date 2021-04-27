@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] = 'POST'){
 
          if($res1)
          {
-             echo "Succesfull";
+            //  echo "Succesfull";
              $sql = "SELECT * FROM `main_cart` WHERE username='$username';";
 
              $res2 = mysqli_query($conn,$sql);
@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] = 'POST'){
                         $cart_id = $temp;
                     }
                 }
-                echo var_dump($cart_id)."<br>";
+                // echo var_dump($cart_id)."<br>";
                 
              }
          }
@@ -51,12 +51,13 @@ if($_SERVER['REQUEST_METHOD'] = 'POST'){
               $item_name = $item['name'];
               $item_price = $item['price'];
               $item_quantity = $item['q'];
-               echo $item_id."<br>";
+            //    echo $item_id."<br>";
               $sql = "INSERT INTO `cart_items` (`cart_id`, `item_id`, `item_name`, `item_price`, `item_quantity`) VALUES ($cart_id, '$item_id', '$item_name', $item_price, $item_quantity);";
               $result = mysqli_query($conn,$sql);
                 if($result)
                 {  
-                    echo "Data inserted";
+                    // echo "Data inserted";
+                    header('Location:http://localhost/sahil/menu.php');
                 }
                 else{
                     echo mysqli_error($conn);

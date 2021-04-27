@@ -497,11 +497,13 @@ hr.head-hr{
     color: #ffffff;
     background: #1f926cbe;
     border-color: #1f926c;
+    cursor: pointer;
 }
 .orders-modal .modal-body .button .actions .decline{
     color: #ffffff;
     background: #ff5c5cc5;
     border-color: #ff5c5c;
+    cursor: pointer;
 }
 .orders-modal .modal-body .button .actions .accept:hover{
     background: #1f926c;
