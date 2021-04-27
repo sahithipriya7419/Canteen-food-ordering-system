@@ -85,6 +85,7 @@ var openCart = document.getElementsByClassName('openCart');
 
 function orderAction(input){
     if(input){
+        openCart(0);
         Swal.fire({
             toast: true,
             icon: 'success',
@@ -101,6 +102,7 @@ function orderAction(input){
           })
     }
     else{
+        openCart(0);
         Swal.fire({
             toast: true,
             icon: 'error',
